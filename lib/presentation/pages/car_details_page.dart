@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rent_app/data/models/car.dart';
 import 'package:rent_app/presentation/widgets/car_card.dart';
+import 'package:rent_app/presentation/widgets/more_card.dart';
 
 class CarDetailsPage extends StatelessWidget {
   const CarDetailsPage({super.key});
@@ -85,6 +86,39 @@ class CarDetailsPage extends StatelessWidget {
                     ),
                   ),
                 ),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              children: [
+                MoreCard(
+                  car: Car(
+                    model: 'Audi A4',
+                    distance: 100,
+                    fuelCapacity: 50,
+                    pricePerHour: 100,
+                  ),
+                ),
+                SizedBox(height: 5),
+                MoreCard(
+                  car: Car(
+                    model: 'Audi A4',
+                    distance: 100,
+                    fuelCapacity: 50,
+                    pricePerHour: 100,
+                  ),
+                ),
+                SizedBox(height: 5),
+                MoreCard(
+                  car: Car(
+                    model: 'Audi A4',
+                    distance: 100,
+                    fuelCapacity: 50,
+                    pricePerHour: 100,
+                  ),
+                )
               ],
             ),
           ),
