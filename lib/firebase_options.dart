@@ -65,4 +65,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'rentapp-22a1b.firebasestorage.app',
     iosBundleId: 'com.example.rentApp',
   );
+
 }
