@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rent_app/presentation/bloc/car_bloc.dart';
+import 'package:rent_app/presentation/bloc/car_event.dart';
 import 'package:rent_app/presentation/bloc/car_state.dart';
 import 'package:rent_app/presentation/widgets/car_card.dart';
 
@@ -22,11 +23,16 @@ class CarListPage extends StatelessWidget {
           }
 
           if (state is CarsLoaded) {
-            return ListView.builder(
-              itemCount: state.cars.length,
-              itemBuilder: (context, index) {
-                return CarCard(car: state.cars[index]);
+            return RefreshIndicator(
+              onRefresh: () async {
+                context.read<CarBloc>().add(LoadCars());
               },
+              child: ListView.builder(
+                itemCount: state.cars.length,
+                itemBuilder: (context, index) {
+                  return CarCard(car: state.cars[index]);
+                },
+              ),
             );
           }
 
