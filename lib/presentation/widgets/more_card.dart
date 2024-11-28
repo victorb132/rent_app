@@ -21,6 +21,7 @@ class MoreCard extends StatelessWidget {
             )
           ]),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
             children: [
@@ -42,7 +43,7 @@ class MoreCard extends StatelessWidget {
                   ),
                   SizedBox(width: 5),
                   Text(
-                    '${car.distance}km',
+                    '> ${car.distance}km',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 14,
